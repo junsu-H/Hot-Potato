@@ -1,0 +1,32 @@
+<!-- vim hot/templates/test.html -->
+
+{% extends 'layout.html' %}
+
+{% block title %}TEST{% endblock %}
+
+{% block content %}
+{% for i, k, s, u in news %}
+<div>
+	<li>id: {{ i }} </li>
+	<li>keyword: {{ k }}</li>
+	<li>summary: {{ s }} </li>
+	<a href="{{ u }} ">url</a>
+
+	<li></li>
+	
+	<form id="rating-form" action="/rating" method="post">
+		<input type='hidden' name=newsId value={{i}} required />
+		<input id="rating" placeholder="rating" name="rate" required />
+		<button type="submit">submit</button>
+		<td><a href="/rate/{{i}}"> rate{{i}}: </a></td>
+	</form>
+</div>
+  
+<script>
+	function selectRate(i) {
+		document.getElementById("rate"+ i).innerHTML ="rate: {{select_rate }}";
+}
+</script>
+{% endfor %}
+{% endblock %}
+
