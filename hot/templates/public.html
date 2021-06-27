@@ -1,0 +1,19 @@
+<!-- vim hot/templates/private.html -->
+
+{% extends 'layout.html' %}
+
+{% block title %}Public{% endblock %}
+
+{% block content %}
+{% for k, s, u, r in public %}
+<div>
+	<li>keyword: {{ k }}</li>
+	<li>summary: {{ s }} </li> 
+	<li>url: <a href="{{ u }} ">{{ u }}</a> </li>
+	<li>rate: {{ r }} </li> 
+        
+</div>
+  
+</script>
+{% endfor %}
+{% endblock %}

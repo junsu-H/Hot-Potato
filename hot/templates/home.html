@@ -1,0 +1,19 @@
+<!-- vim hot/templates/home.html -->
+
+{% extends 'layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h2>Home Page</h2>
+<p>Welcome, {{ username }}!</p>
+	<div>
+		<a href="/article">article</a>
+	</div>
+	<div>
+		<a href="/private">private</a>
+	</div>
+	<div>
+		<a href="/public">public</a>
+	</div>
+{% endblock %}
